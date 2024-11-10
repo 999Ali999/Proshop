@@ -17,6 +17,9 @@ import store from "./store.js";
 import CartPage from "./pages/CartPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
+import ShippingPage from "./pages/ShippingPage.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
+import PaymentPage from "./pages/PaymentPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,8 +29,13 @@ const router = createBrowserRouter(
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-    </Route>,
-  ),
+
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/shipping" element={<ShippingPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
+      </Route>
+    </Route>
+  )
 );
 
 createRoot(document.getElementById("root")).render(
@@ -35,5 +43,5 @@ createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </StrictMode>,
+  </StrictMode>
 );

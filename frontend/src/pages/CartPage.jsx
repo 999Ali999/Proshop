@@ -1,18 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  Row,
+  Col,
+  ListGroup,
+  Image,
+  Form,
   Button,
   Card,
-  Col,
-  Form,
-  Image,
-  ListGroup,
-  Row,
 } from "react-bootstrap";
-import Message from "../components/Message.jsx";
 import { FaTrash } from "react-icons/fa";
-import { addToCart, removeFromCart } from "../slices/cartSlice.js";
-import log from "eslint-plugin-react/lib/util/log.js";
+import Message from "../components/Message";
+import { addToCart, removeFromCart } from "../slices/cartSlice";
 
 const CartPage = () => {
   const navigate = useNavigate();
@@ -21,15 +20,17 @@ const CartPage = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  const addToCartHandler = async (product, qty) => {
+  // NOTE: no need for an async function here as we are not awaiting the
+  // resolution of a Promise
+  const addToCartHandler = (product, qty) => {
     dispatch(addToCart({ ...product, qty }));
   };
 
-  const removeFromCartHandler = async (id) => {
+  const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
 
-  const checkOutHandler = () => {
+  const checkoutHandler = () => {
     navigate("/login?redirect=/shipping");
   };
 
@@ -39,7 +40,7 @@ const CartPage = () => {
         <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your cart is empty <Link to={"/"}>Go Back</Link>
+            Your cart is empty <Link to="/">Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant="flush">
@@ -70,9 +71,9 @@ const CartPage = () => {
                   </Col>
                   <Col md={2}>
                     <Button
+                      type="button"
+                      variant="light"
                       onClick={() => removeFromCartHandler(item._id)}
-                      type={"button"}
-                      variant={"light"}
                     >
                       <FaTrash />
                     </Button>
@@ -101,7 +102,7 @@ const CartPage = () => {
                 type="button"
                 className="btn-block"
                 disabled={cartItems.length === 0}
-                onChange={checkOutHandler}
+                onClick={checkoutHandler}
               >
                 Proceed To Checkout
               </Button>
