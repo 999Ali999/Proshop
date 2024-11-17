@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import Rating from "../components/Rating.jsx";
 
-import { useGetProductDetailsQuery } from "../slices/productApiSlice.js";
+import { useGetProductDetailsQuery } from "../slices/productsApiSlice.js";
 import Loader from "../components/Loader.jsx";
 import Message from "../components/Message.jsx";
 import { useState } from "react";
