@@ -12,6 +12,7 @@ https://github.com/user-attachments/assets/9a350cb8-63cf-4b75-8480-ea975c351455
 - Product pagination
 - Product search feature
 - User profile with orders
+- Write reviews
 - Admin product management
 - Admin user management
 - Admin Order details page
