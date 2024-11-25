@@ -1,6 +1,6 @@
 # MERN Stack eCommerce Platform
 
-A full-featured eCommerce platform built with MERN (MongoDB, Express, React, Node.js) stack and Redux Toolkit for state management.
+A full-featured eCommerce platform built with MERN (MongoDB, Express, React, Node.js) stack and Redux Toolkit / RTQ Query for state management and data fetching.
 
 https://github.com/user-attachments/assets/9a350cb8-63cf-4b75-8480-ea975c351455
 
