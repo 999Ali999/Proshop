@@ -2,6 +2,8 @@
 
 A full-featured eCommerce platform built with MERN (MongoDB, Express, React, Node.js) stack and Redux Toolkit for state management.
 
+https://github.com/user-attachments/assets/9a350cb8-63cf-4b75-8480-ea975c351455
+
 ## 🚀 Features
 
 - Full-featured shopping cart
